@@ -1,22 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e678b460-5052-4a81-9bd5-70bf778bd89d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Admin/AdminView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Admin/Auth/AuthView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Admin/Content/ContentView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectAddEditView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectsView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Forms/ProjectForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Main/MainView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Main/ProjectView.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NotFound.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/firebase.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Contacts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Content.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Github.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Project.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stores/AuthState.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stores/ProjectsState.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/colors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZaKjZgi5wJm08NjfqL3yzew42P" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path" value="node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Admin/Auth" />
+      <recent name="$PROJECT_DIR$/src/components/Admin/Content" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/components/Admin" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1585073561626</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585073561626</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="418" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585073544031">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="418" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585073544031" />
-    <state x="522" y="68" width="865" height="925" key="CommitChangelistDialog2" timestamp="1585073514299">
+    <state x="522" y="68" width="865" height="925" key="CommitChangelistDialog2" timestamp="1585073561418">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="522" y="68" width="865" height="925" key="CommitChangelistDialog2/0.27.1920.1001@0.27.1920.1001" timestamp="1585073514299" />
+    <state x="522" y="68" width="865" height="925" key="CommitChangelistDialog2/0.27.1920.1001@0.27.1920.1001" timestamp="1585073561418" />
+    <state x="717" y="189" width="475" height="683" key="RollbackChangesDialog" timestamp="1585075754290">
+      <screen x="0" y="27" width="1920" height="1001" />
+    </state>
+    <state x="717" y="189" width="475" height="683" key="RollbackChangesDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585075754290" />
   </component>
 </project>
