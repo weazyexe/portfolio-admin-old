@@ -1,6 +1,7 @@
 @import "colors";
 
 .input {
+  font-family: 'Montserrat', sans-serif;
   display: block;
   background: transparent;
   font-size: 1em;
@@ -19,13 +20,23 @@
 }
 
 .button {
+  font-family: 'Montserrat', sans-serif;
   display: block;
   padding: 1em 2em;
   color: $dark-grey;
   border-style: none;
-  background: $gradient;
+  background: $gradient-pink;
   transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
   outline: none;
+  min-width: 10em;
+
+  &.secondary {
+    background: $white;
+
+    &:active {
+      background: #efefef;
+    }
+  }
 
   &:active {
     background: $pink;

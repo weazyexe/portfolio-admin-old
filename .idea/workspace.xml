@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e678b460-5052-4a81-9bd5-70bf778bd89d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Views/AdminHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Views/Button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Views/Input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/AdminPages.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stores/AdminState.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/views.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/admin.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AdminView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Admin/Auth/AuthView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Auth/AuthView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stores/AuthState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/AuthState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Views/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/Button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/colors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/views.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/views.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585077060533</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="make auth form styles">
+      <created>1585157696534</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585157696534</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,17 +111,18 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="dependencies &amp; project config settings" />
     <MESSAGE value="add project main structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="add project main structure" />
+    <MESSAGE value="make auth form styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="make auth form styles" />
   </component>
   <component name="WindowStateProjectService">
     <state x="480" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585152628695">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="480" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585152628695" />
-    <state x="522" y="68" width="865" height="925" key="CommitChangelistDialog2" timestamp="1585077060438">
+    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2" timestamp="1585157696372">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="522" y="68" width="865" height="925" key="CommitChangelistDialog2/0.27.1920.1001@0.27.1920.1001" timestamp="1585077060438" />
+    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2/0.27.1920.1001@0.27.1920.1001" timestamp="1585157696372" />
     <state width="1897" height="258" key="GridCell.Tab.0.bottom" timestamp="1585155563270">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
@@ -143,10 +143,10 @@
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="717" y="189" width="475" height="683" key="RollbackChangesDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585075754290" />
-    <state x="555" y="263" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1585077143033">
+    <state x="555" y="263" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1585157703403">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="555" y="263" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1001@0.27.1920.1001" timestamp="1585077143033" />
+    <state x="555" y="263" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1001@0.27.1920.1001" timestamp="1585157703403" />
     <state x="728" y="447" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585077153962">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>

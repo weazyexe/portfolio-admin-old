@@ -9,6 +9,7 @@ import AdminState from "../../../stores/AdminState";
 import AdminPages from "../../../models/AdminPages";
 
 import '../../../styles/styles.scss';
+import '../../../styles/admin.scss';
 
 interface AuthViewProps {
     authState?: AuthState
@@ -57,6 +58,11 @@ export default class AuthView extends Component<AuthViewProps> {
             return(
                 <div>
                     <form onSubmit={(e) => this.onSubmit(e)}>
+
+                        <div className='auth-welcome text-center'>
+                            What are you doing here?
+                        </div>
+
                         <div>
                             <Input
                                 className='mx-auto my-1'
@@ -76,6 +82,10 @@ export default class AuthView extends Component<AuthViewProps> {
 
                         <div>
                             <Button className='my-1 mx-auto' text='Sign in' type='submit' />
+                        </div>
+
+                        <div>
+                            <Button className='my-1 mx-auto' text='Leave' type='submit' color='secondary' />
                         </div>
                     </form>
                 </div>
