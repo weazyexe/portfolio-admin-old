@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import ProjectsState from '../stores/ProjectsState';
 import AuthState from '../stores/AuthState';
+import AdminState from '../stores/AdminState';
 
 import MainView from "./Main/MainView";
 import AuthView from "./Admin/Auth/AuthView";
@@ -14,13 +15,20 @@ import NotFound from "./NotFound";
 import ProjectsView from "./Admin/Projects/ProjectsView";
 import ProjectAddEditView from "./Admin/Projects/ProjectAddEditView";
 
+import '../styles/styles.scss';
+
 const projectsState = new ProjectsState();
 const authState = new AuthState();
+const adminState = new AdminState();
 
 function App() {
   return (
     <div>
-      <Provider projectsState={projectsState} authState={authState}>
+      <Provider
+          projectsState={projectsState}
+          authState={authState}
+          adminState={adminState}>
+
         <BrowserRouter>
           <Switch>
             <Route exact path='/' component={MainView} />
@@ -32,6 +40,7 @@ function App() {
             <Route component={NotFound}/>
           </Switch>
         </BrowserRouter>
+
       </Provider>
     </div>
   );

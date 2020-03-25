@@ -1,0 +1,93 @@
+@import "colors";
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  color: $black;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  background: $white;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@for $i from 0 through 5 {
+  .m-#{$i} {
+    margin: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 5 {
+  .mt-#{$i} {
+    margin-top: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 5 {
+  .ml-#{$i} {
+    margin-left: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 5 {
+  .mb-#{$i} {
+    margin-bottom: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 5 {
+  .mr-#{$i} {
+    margin-right: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 5 {
+  .p-#{$i} {
+    padding: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 5 {
+  .pt-#{$i} {
+    padding-top: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 5 {
+  .pl-#{$i} {
+    padding-left: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 5 {
+  .pb-#{$i} {
+    padding-bottom: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 to 5 {
+  .pr-#{$i} {
+    padding-right: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 5 {
+  .mx-#{$i} {
+    margin-right: #{$i}rem !important;
+    margin-left: #{$i}rem !important;
+  }
+}
+
+@for $i from 0 through 5 {
+  .my-#{$i} {
+    margin-top: #{$i}rem !important;
+    margin-bottom: #{$i}rem !important;
+  }
+}

@@ -1,0 +1,51 @@
+@import "colors";
+
+.input {
+  display: block;
+  background: transparent;
+  font-size: 1em;
+  padding: 0.7em;
+  border: 1px solid $grey;
+  transition: border 0.2s ease-in-out;
+  outline: none;
+
+  &:focus {
+    border: 1px solid $pink;
+  }
+}
+
+::placeholder {
+  color: $grey;
+}
+
+.button {
+  display: block;
+  padding: 1em 2em;
+  color: $dark-grey;
+  border-style: none;
+  background: $gradient;
+  transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
+  outline: none;
+
+  &:active {
+    background: $pink;
+  }
+
+  &:hover {
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.1);
+  }
+}
+
+.admin-header {
+  margin-bottom: 2em;
+}
+
+.admin-header-element {
+  font-size: 1.2em;
+  display: inline;
+  margin: 1em;
+
+  &.chosen {
+    color: $pink;
+  }
+}
