@@ -2,12 +2,14 @@ import * as React from 'react';
 import { Component } from 'react';
 import { inject, observer } from "mobx-react";
 import AuthState from "../../stores/AuthState";
-import AuthView from "./Auth/AuthView";
 import AdminState from "../../stores/AdminState";
 import AdminPages from "../../models/AdminPages";
 import ContentView from "./Content/ContentView";
 import ProjectsView from "./Projects/ProjectsView";
 import AdminHeader from "../Views/AdminHeader";
+import {Redirect} from "react-router";
+import Loader from "../Views/Loader";
+import { auth } from "../../lib/firebase";
 
 interface AdminViewProps {
     authState?: AuthState
@@ -19,10 +21,42 @@ interface AdminViewProps {
 @observer
 export default class AdminView extends Component<AdminViewProps> {
 
+    constructor(props: AdminViewProps) {
+        super(props);
+        this.authStateChanged();
+    }
+
+    authStateChanged = () => {
+        const { authState, adminState } = this.props;
+
+        auth.onAuthStateChanged((user) => {
+            if (authState && adminState) {
+                authState.isSignedIn = !!user;
+                adminState.loading = false;
+            }
+        })
+    };
+
+    onSignOutClick = async () => {
+        const { adminState, authState } = this.props;
+
+        if (authState && adminState) {
+            adminState.loading = true;
+            await authState.signOut();
+            adminState.loading = false;
+        }
+    };
+
+    onPageChangeClick = (page: AdminPages) => {
+        const { adminState } = this.props;
+
+        if (adminState) {
+            adminState.page = page;
+        }
+    };
+
     renderAdminPage = (page: AdminPages): any => {
         switch (page) {
-            case AdminPages.AUTH:
-                return <AuthView/>;
             case AdminPages.CONTENT:
                 return <ContentView/>;
             case AdminPages.PROJECTS:
@@ -33,14 +67,26 @@ export default class AdminView extends Component<AdminViewProps> {
     render() {
         const { authState, adminState } = this.props;
 
+        if (!authState?.isSignedIn) {
+            return <Redirect to='/auth' />;
+        }
+
         if (authState && adminState) {
             return (
                 <div>
-                    {authState.isSignedIn() ?
-                        <div>
-                            <AdminHeader page={adminState?.page} />
-                            {this.renderAdminPage(adminState?.page)}
-                        </div> : <AuthView/>
+                    {adminState?.loading
+                        ? <Loader/>
+                        : <div>
+                            <AdminHeader
+                                page={adminState?.page}
+                                onPageChangeClick={(page) => this.onPageChangeClick(page)}
+                                onSignOutClick={() => this.onSignOutClick()}
+                            />
+
+                            <div className='m-1'>
+                                {this.renderAdminPage(adminState?.page)}
+                            </div>
+                        </div>
                     }
                 </div>
             );
@@ -49,3 +95,4 @@ export default class AdminView extends Component<AdminViewProps> {
         return <div/>
     }
 }
+

@@ -1,5 +1,5 @@
 enum AdminPages {
-    AUTH, CONTENT, PROJECTS
+    CONTENT, PROJECTS
 }
 
 export default AdminPages

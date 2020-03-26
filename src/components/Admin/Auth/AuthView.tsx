@@ -1,15 +1,15 @@
 import * as React from "react";
-import { Component } from "react";
+import { Component, FormEvent } from "react";
 import Input from "../../Views/Input";
 import Button from "../../Views/Button";
 import AuthState from "../../../stores/AuthState";
 import { inject, observer } from "mobx-react";
-import { FormEvent } from "react";
 import AdminState from "../../../stores/AdminState";
-import AdminPages from "../../../models/AdminPages";
 
 import '../../../styles/styles.scss';
 import '../../../styles/admin.scss';
+import Loader from "../../Views/Loader";
+import { Redirect } from "react-router";
 
 interface AuthViewProps {
     authState?: AuthState
@@ -42,52 +42,59 @@ export default class AuthView extends Component<AuthViewProps> {
         e.preventDefault();
 
         if (authState && authState.email && authState.password && adminState) {
+            adminState.loading = true;
             await authState.signIn();
-            if (authState.isSignedIn()) {
-                adminState.page = AdminPages.CONTENT;
-            } else {
+            if (!authState.isSignedIn) {
                 alert('Wrong credentials');
             }
+            adminState.loading = false;
         }
     }
 
     render() {
-        const { authState } = this.props;
+        const { authState, adminState } = this.props;
 
-        if (authState) {
+        if (authState?.isSignedIn) {
+            return <Redirect to='/admin' />
+        }
+
+        if (authState && adminState) {
             return(
                 <div>
-                    <form onSubmit={(e) => this.onSubmit(e)}>
+                    {adminState?.loading
+                        ? <Loader/>
+                        : <form onSubmit={(e) => this.onSubmit(e)}>
 
-                        <div className='auth-welcome text-center'>
-                            What are you doing here?
-                        </div>
+                            <div className='auth-welcome text-center'>
+                                What are you doing here?
+                            </div>
 
-                        <div>
-                            <Input
-                                className='mx-auto my-1'
-                                value={authState?.email}
-                                hint='you@weazyexe.dev'
-                                onChange={(email) => this.onEmailChange(email)}/>
-                        </div>
+                            <div>
+                                <Input
+                                    className='mx-auto my-1'
+                                    value={authState?.email}
+                                    hint='you@weazyexe.dev'
+                                    onChange={(email) => this.onEmailChange(email)}/>
+                            </div>
 
-                        <div>
-                            <Input
-                                className='mx-auto my-1'
-                                value={authState?.password}
-                                hint='••••••••'
-                                type='password'
-                                onChange={(password) => this.onPasswordChange(password)}/>
-                        </div>
+                            <div>
+                                <Input
+                                    className='mx-auto my-1'
+                                    value={authState?.password}
+                                    hint='••••••••'
+                                    type='password'
+                                    onChange={(password) => this.onPasswordChange(password)}/>
+                            </div>
 
-                        <div>
-                            <Button className='my-1 mx-auto' text='Sign in' type='submit' />
-                        </div>
+                            <div>
+                                <Button className='my-1 mx-auto' text='Sign in' type='submit' />
+                            </div>
 
-                        <div>
-                            <Button className='my-1 mx-auto' text='Leave' type='submit' color='secondary' />
-                        </div>
-                    </form>
+                            <div>
+                                <Button className='my-1 mx-auto' text='Leave' type='submit' color='secondary' />
+                            </div>
+                        </form>
+                    }
                 </div>
             );
         }

@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e678b460-5052-4a81-9bd5-70bf778bd89d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/styles/admin.scss" afterDir="false" />
+    <list default="true" id="e678b460-5052-4a81-9bd5-70bf778bd89d" name="Default Changelist" comment="update styles &amp; add leave button">
+      <change afterPath="$PROJECT_DIR$/src/components/Views/Loader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/loader.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AdminView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Admin/Auth/AuthView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Auth/AuthView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Views/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/colors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Content/ContentView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Content/ContentView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectsView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectsView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Views/AdminHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/AdminHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/AdminPages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/AdminPages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/AdminState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/AdminState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/AuthState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/AuthState.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/views.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/views.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="SCSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -30,12 +35,22 @@
   </component>
   <component name="ProjectId" id="1ZaKjZgi5wJm08NjfqL3yzew42P" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -93,15 +108,35 @@
       <option name="project" value="LOCAL" />
       <updated>1585157696534</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update styles &amp; add leave button">
+      <created>1585158930965</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585158930965</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e678b460-5052-4a81-9bd5-70bf778bd89d" name="Default Changelist" comment="" />
+      <created>1585235183012</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585235183012</updated>
+      <workItem from="1585235209914" duration="8727000" />
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -112,41 +147,42 @@
     <MESSAGE value="dependencies &amp; project config settings" />
     <MESSAGE value="add project main structure" />
     <MESSAGE value="make auth form styles" />
-    <option name="LAST_COMMIT_MESSAGE" value="make auth form styles" />
+    <MESSAGE value="update styles &amp; add leave button" />
+    <option name="LAST_COMMIT_MESSAGE" value="update styles &amp; add leave button" />
   </component>
   <component name="WindowStateProjectService">
     <state x="480" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585152628695">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="480" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585152628695" />
-    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2" timestamp="1585157696372">
+    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2" timestamp="1585243999385">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2/0.27.1920.1001@0.27.1920.1001" timestamp="1585157696372" />
-    <state width="1897" height="258" key="GridCell.Tab.0.bottom" timestamp="1585155563270">
+    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2/0.27.1920.1001@0.27.1920.1001" timestamp="1585243999385" />
+    <state width="1897" height="258" key="GridCell.Tab.0.bottom" timestamp="1585241607556">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.bottom/0.27.1920.1001@0.27.1920.1001" timestamp="1585155563270" />
-    <state width="1897" height="258" key="GridCell.Tab.0.center" timestamp="1585155563269">
+    <state width="1897" height="258" key="GridCell.Tab.0.bottom/0.27.1920.1001@0.27.1920.1001" timestamp="1585241607556" />
+    <state width="1897" height="258" key="GridCell.Tab.0.center" timestamp="1585241607554">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.center/0.27.1920.1001@0.27.1920.1001" timestamp="1585155563269" />
-    <state width="1897" height="258" key="GridCell.Tab.0.left" timestamp="1585155563269">
+    <state width="1897" height="258" key="GridCell.Tab.0.center/0.27.1920.1001@0.27.1920.1001" timestamp="1585241607554" />
+    <state width="1897" height="258" key="GridCell.Tab.0.left" timestamp="1585241607552">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.left/0.27.1920.1001@0.27.1920.1001" timestamp="1585155563269" />
-    <state width="1897" height="258" key="GridCell.Tab.0.right" timestamp="1585155563269">
+    <state width="1897" height="258" key="GridCell.Tab.0.left/0.27.1920.1001@0.27.1920.1001" timestamp="1585241607552" />
+    <state width="1897" height="258" key="GridCell.Tab.0.right" timestamp="1585241607555">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.right/0.27.1920.1001@0.27.1920.1001" timestamp="1585155563269" />
-    <state x="717" y="189" width="475" height="683" key="RollbackChangesDialog" timestamp="1585075754290">
+    <state width="1897" height="258" key="GridCell.Tab.0.right/0.27.1920.1001@0.27.1920.1001" timestamp="1585241607555" />
+    <state x="717" y="189" width="475" height="683" key="RollbackChangesDialog" timestamp="1585241913542">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="717" y="189" width="475" height="683" key="RollbackChangesDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585075754290" />
-    <state x="555" y="263" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1585157703403">
+    <state x="717" y="189" width="475" height="683" key="RollbackChangesDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585241913542" />
+    <state x="555" y="263" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1585158935550">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="555" y="263" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1001@0.27.1920.1001" timestamp="1585157703403" />
+    <state x="555" y="263" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1001@0.27.1920.1001" timestamp="1585158935550" />
     <state x="728" y="447" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585077153962">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>

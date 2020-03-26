@@ -5,10 +5,13 @@ export default class AuthState {
 
     @observable email = '';
     @observable password = '';
+    @observable isSignedIn = true;
 
     @action signIn = async () => {
         await auth.signInWithEmailAndPassword(this.email, this.password);
-    }
+    };
 
-    isSignedIn = () : boolean => !!auth.currentUser
+    @action signOut = async () => {
+        await auth.signOut();
+    };
 }

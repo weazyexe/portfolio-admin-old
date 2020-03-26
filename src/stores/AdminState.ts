@@ -2,6 +2,6 @@ import { observable } from "mobx";
 import AdminPages from "../models/AdminPages";
 
 export default class AdminState {
-    @observable page = AdminPages.AUTH;
-    @observable loading = false;
+    @observable page = AdminPages.CONTENT;
+    @observable loading = true;
 }

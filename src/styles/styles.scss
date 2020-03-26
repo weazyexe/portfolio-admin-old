@@ -18,6 +18,19 @@ html {
   margin-right: auto;
 }
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
 @for $i from 0 through 5 {
   .m-#{$i} {
     margin: #{$i}rem !important;
@@ -94,4 +107,8 @@ html {
 
 .text-center {
   text-align: center;
+}
+
+.inline {
+  display: inline;
 }
