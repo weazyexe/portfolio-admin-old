@@ -4,9 +4,11 @@ import { Provider } from 'mobx-react';
 import { Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
-import ProjectsState from '../stores/ProjectsState';
-import AuthState from '../stores/AuthState';
-import AdminState from '../stores/AdminState';
+import ProjectsState from '../stores/components/ProjectsState';
+import AuthState from '../stores/components/AuthState';
+import AdminState from '../stores/components/AdminState';
+import ContentState from "../stores/components/ContentState";
+import ContentFormState from "../stores/forms/ContentFormState";
 
 import MainView from "./Main/MainView";
 import AuthView from "./Admin/Auth/AuthView";
@@ -17,6 +19,8 @@ import ProjectAddEditView from "./Admin/Projects/ProjectAddEditView";
 
 import '../styles/styles.scss';
 
+const contentFormState = new ContentFormState();
+const contentState = new ContentState();
 const projectsState = new ProjectsState();
 const authState = new AuthState();
 const adminState = new AdminState();
@@ -27,7 +31,9 @@ function App() {
       <Provider
           projectsState={projectsState}
           authState={authState}
-          adminState={adminState}>
+          adminState={adminState}
+          contentState={contentState}
+          contentFormState={contentFormState}>
 
         <BrowserRouter>
           <Switch>

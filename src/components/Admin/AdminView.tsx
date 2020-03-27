@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { inject, observer } from "mobx-react";
-import AuthState from "../../stores/AuthState";
-import AdminState from "../../stores/AdminState";
+import AuthState from "../../stores/components/AuthState";
+import AdminState from "../../stores/components/AdminState";
 import AdminPages from "../../models/AdminPages";
 import ContentView from "./Content/ContentView";
 import ProjectsView from "./Projects/ProjectsView";
@@ -32,18 +32,18 @@ export default class AdminView extends Component<AdminViewProps> {
         auth.onAuthStateChanged((user) => {
             if (authState && adminState) {
                 authState.isSignedIn = !!user;
-                adminState.loading = false;
+                authState.loading = false;
             }
         })
     };
 
     onSignOutClick = async () => {
-        const { adminState, authState } = this.props;
+        const { authState } = this.props;
 
-        if (authState && adminState) {
-            adminState.loading = true;
+        if (authState) {
+            authState.loading = true;
             await authState.signOut();
-            adminState.loading = false;
+            authState.loading = false;
         }
     };
 
@@ -67,6 +67,8 @@ export default class AdminView extends Component<AdminViewProps> {
     render() {
         const { authState, adminState } = this.props;
 
+        document.title = 'admin - weazyexe.dev';
+
         if (!authState?.isSignedIn) {
             return <Redirect to='/auth' />;
         }
@@ -74,7 +76,7 @@ export default class AdminView extends Component<AdminViewProps> {
         if (authState && adminState) {
             return (
                 <div>
-                    {adminState?.loading
+                    {authState?.loading
                         ? <Loader/>
                         : <div>
                             <AdminHeader

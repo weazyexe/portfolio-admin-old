@@ -13,6 +13,12 @@ html {
   background: $white;
 }
 
+textarea {
+  resize: none;
+  width: 50em;
+  height: 20em;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;

@@ -47,16 +47,20 @@
   }
 }
 
-.admin-header {
-  margin-bottom: 2em;
+.toast {
+  background-color: $dark-grey;
+  color: $white;
+  padding: 1em;
+  position: absolute;
+  bottom: 2em;
+  right: 2em;
+  display: inline;
+  font-size: 0.8em;
 }
 
-.admin-header-element {
-  font-size: 1.2em;
+.form-title {
+  font-size: 1.4em;
   display: inline;
-  margin: 1em;
-
-  &.chosen {
-    color: $pink;
-  }
+  margin-top: 1em;
+  font-weight: 500;
 }

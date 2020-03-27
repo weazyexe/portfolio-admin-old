@@ -2,9 +2,9 @@ import * as React from "react";
 import { Component, FormEvent } from "react";
 import Input from "../../Views/Input";
 import Button from "../../Views/Button";
-import AuthState from "../../../stores/AuthState";
+import AuthState from "../../../stores/components/AuthState";
 import { inject, observer } from "mobx-react";
-import AdminState from "../../../stores/AdminState";
+import AdminState from "../../../stores/components/AdminState";
 
 import '../../../styles/styles.scss';
 import '../../../styles/admin.scss';
@@ -13,10 +13,8 @@ import { Redirect } from "react-router";
 
 interface AuthViewProps {
     authState?: AuthState
-    adminState?: AdminState
 }
 
-@inject('adminState')
 @inject('authState')
 @observer
 export default class AuthView extends Component<AuthViewProps> {
@@ -38,30 +36,32 @@ export default class AuthView extends Component<AuthViewProps> {
     }
 
     onSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        const { authState, adminState } = this.props;
+        const { authState } = this.props;
         e.preventDefault();
 
-        if (authState && authState.email && authState.password && adminState) {
-            adminState.loading = true;
+        if (authState && authState.email && authState.password) {
+            authState.loading = true;
             await authState.signIn();
             if (!authState.isSignedIn) {
                 alert('Wrong credentials');
             }
-            adminState.loading = false;
+            authState.loading = false;
         }
     }
 
     render() {
-        const { authState, adminState } = this.props;
+        const { authState } = this.props;
+
+        document.title = 'auth - weazyexe.dev';
 
         if (authState?.isSignedIn) {
             return <Redirect to='/admin' />
         }
 
-        if (authState && adminState) {
+        if (authState) {
             return(
                 <div>
-                    {adminState?.loading
+                    {authState?.loading
                         ? <Loader/>
                         : <form onSubmit={(e) => this.onSubmit(e)}>
 

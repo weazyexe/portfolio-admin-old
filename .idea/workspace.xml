@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e678b460-5052-4a81-9bd5-70bf778bd89d" name="Default Changelist" comment="update styles &amp; add leave button">
-      <change afterPath="$PROJECT_DIR$/src/components/Views/Loader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/loader.scss" afterDir="false" />
+    <list default="true" id="e678b460-5052-4a81-9bd5-70bf778bd89d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Forms/ContentForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Views/Toast.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stores/components/ContentState.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stores/forms/ContentFormState.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stores/forms/ProjectFormState.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AdminView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Admin/Auth/AuthView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Auth/AuthView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Admin/Content/ContentView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Content/ContentView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectsView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectsView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Views/AdminHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/AdminHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/AdminPages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/AdminPages.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stores/AdminState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/AdminState.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stores/AuthState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/AuthState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Views/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/AdminState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/components/AdminState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/AuthState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/components/AuthState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/ProjectsState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/components/ProjectsState.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/views.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/views.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="SCSS File" />
+        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -54,10 +61,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/stores/components" />
+      <recent name="$PROJECT_DIR$/src/stores/forms" />
       <recent name="$PROJECT_DIR$/src/components/Admin/Auth" />
       <recent name="$PROJECT_DIR$/src/components/Admin/Content" />
       <recent name="$PROJECT_DIR$/src/components" />
-      <recent name="$PROJECT_DIR$/src/components/Admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -121,9 +129,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585235183012</updated>
-      <workItem from="1585235209914" duration="8727000" />
+      <workItem from="1585235209914" duration="15621000" />
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add auth, loader &amp; admin empty pages">
+      <created>1585244061072</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585244061072</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,48 +163,49 @@
     <MESSAGE value="add project main structure" />
     <MESSAGE value="make auth form styles" />
     <MESSAGE value="update styles &amp; add leave button" />
-    <option name="LAST_COMMIT_MESSAGE" value="update styles &amp; add leave button" />
+    <MESSAGE value="add auth, loader &amp; admin empty pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="add auth, loader &amp; admin empty pages" />
   </component>
   <component name="WindowStateProjectService">
     <state x="480" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585152628695">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="480" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585152628695" />
-    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2" timestamp="1585243999385">
+    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2" timestamp="1585244060427">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2/0.27.1920.1001@0.27.1920.1001" timestamp="1585243999385" />
-    <state width="1897" height="258" key="GridCell.Tab.0.bottom" timestamp="1585241607556">
+    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2/0.27.1920.1001@0.27.1920.1001" timestamp="1585244060427" />
+    <state width="1897" height="258" key="GridCell.Tab.0.bottom" timestamp="1585326660715">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.bottom/0.27.1920.1001@0.27.1920.1001" timestamp="1585241607556" />
-    <state width="1897" height="258" key="GridCell.Tab.0.center" timestamp="1585241607554">
+    <state width="1897" height="258" key="GridCell.Tab.0.bottom/0.27.1920.1001@0.27.1920.1001" timestamp="1585326660715" />
+    <state width="1897" height="258" key="GridCell.Tab.0.center" timestamp="1585326660714">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.center/0.27.1920.1001@0.27.1920.1001" timestamp="1585241607554" />
-    <state width="1897" height="258" key="GridCell.Tab.0.left" timestamp="1585241607552">
+    <state width="1897" height="258" key="GridCell.Tab.0.center/0.27.1920.1001@0.27.1920.1001" timestamp="1585326660714" />
+    <state width="1897" height="258" key="GridCell.Tab.0.left" timestamp="1585326660713">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.left/0.27.1920.1001@0.27.1920.1001" timestamp="1585241607552" />
-    <state width="1897" height="258" key="GridCell.Tab.0.right" timestamp="1585241607555">
+    <state width="1897" height="258" key="GridCell.Tab.0.left/0.27.1920.1001@0.27.1920.1001" timestamp="1585326660713" />
+    <state width="1897" height="258" key="GridCell.Tab.0.right" timestamp="1585326660714">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.right/0.27.1920.1001@0.27.1920.1001" timestamp="1585241607555" />
+    <state width="1897" height="258" key="GridCell.Tab.0.right/0.27.1920.1001@0.27.1920.1001" timestamp="1585326660714" />
     <state x="717" y="189" width="475" height="683" key="RollbackChangesDialog" timestamp="1585241913542">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="717" y="189" width="475" height="683" key="RollbackChangesDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585241913542" />
-    <state x="555" y="263" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1585158935550">
+    <state x="586" y="236" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1585244110165">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="555" y="263" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1001@0.27.1920.1001" timestamp="1585158935550" />
+    <state x="586" y="236" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1001@0.27.1920.1001" timestamp="1585244110165" />
     <state x="728" y="447" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585077153962">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="728" y="447" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1001@0.27.1920.1001" timestamp="1585077153962" />
-    <state x="623" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1585151372412">
+    <state x="623" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1585328943623">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="623" y="246" width="672" height="678" key="search.everywhere.popup/0.27.1920.1001@0.27.1920.1001" timestamp="1585151372412" />
+    <state x="623" y="246" width="672" height="678" key="search.everywhere.popup/0.27.1920.1001@0.27.1920.1001" timestamp="1585328943623" />
   </component>
 </project>
