@@ -1,14 +1,13 @@
 import * as React from "react";
 import { Component, FormEvent } from "react";
-import Input from "../../Views/Input";
-import Button from "../../Views/Button";
+import Input from "../../Views/Controls/Input";
+import Button from "../../Views/Controls/Button";
 import AuthState from "../../../stores/components/AuthState";
 import { inject, observer } from "mobx-react";
-import AdminState from "../../../stores/components/AdminState";
 
 import '../../../styles/styles.scss';
-import '../../../styles/admin.scss';
-import Loader from "../../Views/Loader";
+import '../../../styles/views.scss';
+import Loader from "../../Views/Controls/Loader";
 import { Redirect } from "react-router";
 
 interface AuthViewProps {
@@ -44,6 +43,9 @@ export default class AuthView extends Component<AuthViewProps> {
             await authState.signIn();
             if (!authState.isSignedIn) {
                 alert('Wrong credentials');
+            } else {
+                authState.email = '';
+                authState.password = '';
             }
             authState.loading = false;
         }

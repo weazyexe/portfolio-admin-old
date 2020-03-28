@@ -2,21 +2,30 @@ import * as React from 'react';
 import { Component } from 'react';
 import { inject, observer } from "mobx-react";
 import ContentState from "../../../stores/components/ContentState";
-import AdminState from "../../../stores/components/AdminState";
-import Loader from "../../Views/Loader";
+import Loader from "../../Views/Controls/Loader";
 import ContentForm from "../../Forms/ContentForm";
 import Content from "../../../models/Content";
-import Toast from "../../Views/Toast";
+import Toast from "../../Views/Controls/Toast";
+import AdminHeader from "../../Views/AdminHeader";
+import AdminPages from "../../../models/AdminPages";
+import AuthState from "../../../stores/components/AuthState";
+import {auth} from "../../../lib/firebase";
+import {Redirect} from "react-router-dom";
 
 interface ContentViewProps {
     contentState?: ContentState
-    adminState?: AdminState
+    authState?: AuthState
 }
 
 @inject('contentState')
-@inject('adminState')
+@inject('authState')
 @observer
 export default class ContentView extends Component<ContentViewProps> {
+
+    constructor(props: ContentViewProps) {
+        super(props);
+        this.authStateChanged();
+    }
 
     async componentDidMount() {
         const { contentState } = this.props;
@@ -27,6 +36,17 @@ export default class ContentView extends Component<ContentViewProps> {
             contentState.loading = false;
         }
     }
+
+    authStateChanged = () => {
+        const { authState } = this.props;
+
+        auth.onAuthStateChanged((user) => {
+            if (authState) {
+                authState.isSignedIn = !!user;
+                authState.loading = false;
+            }
+        })
+    };
 
     onContentSave = async (item: Content) => {
         const { contentState } = this.props;
@@ -41,22 +61,31 @@ export default class ContentView extends Component<ContentViewProps> {
     }
 
     render() {
-        const { contentState } = this.props;
+        const { authState, contentState } = this.props;
 
         document.title = 'content - weazyexe.dev';
 
-        if (contentState) {
-            return <div>
-                {
-                    contentState?.loading ? <Loader/> :
-                        <div>
-                            {contentState?.showToast && <Toast text='Changes saved' />}
-                            <ContentForm
-                                item={contentState?.content}
-                                onSave={(item) => this.onContentSave(item)} />
-                        </div>
-                }
-            </div>;
+        if (!authState?.isSignedIn) {
+            return <Redirect to='/auth' />;
+        }
+
+        if (contentState && authState) {
+            return authState.loading ? <Loader/>
+                : <div>
+                    <AdminHeader page={AdminPages.CONTENT}/>
+
+                    <div className='m-1'>
+                        {
+                            contentState?.loading ? <Loader/> :
+                                <div>
+                                    {contentState?.showToast && <Toast text='Changes saved' />}
+                                    <ContentForm
+                                        item={contentState?.content}
+                                        onSave={(item) => this.onContentSave(item)} />
+                                </div>
+                        }
+                    </div>
+                </div>;
         }
 
         return <div/>;
