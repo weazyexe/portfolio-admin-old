@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 
-import '../../styles/loader.scss';
+import '../../../styles/views/loader.scss';
 
 
 export default class Loader extends Component {

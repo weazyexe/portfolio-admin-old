@@ -8,4 +8,6 @@ export default interface Project {
     images: string[]
     sortWeight: number
     tags: string[]
+    hidden: boolean
+    color: string
 }

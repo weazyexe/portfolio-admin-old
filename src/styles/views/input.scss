@@ -1,0 +1,18 @@
+.input {
+  font-family: 'Montserrat', sans-serif;
+  display: block;
+  background: transparent;
+  font-size: 1em;
+  padding: 0.7em;
+  border: 1px solid $grey;
+  transition: border 0.2s ease-in-out;
+  outline: none;
+
+  &:focus {
+    border: 1px solid $pink;
+  }
+}
+
+::placeholder {
+  color: $grey;
+}

@@ -1,0 +1,22 @@
+.react-select__control {
+  border-radius: 0 !important;
+  border-color: $grey !important;
+  background: transparent !important;
+  max-width: 20em;
+}
+
+.react-select__control--is-focused {
+  border-color: $pink !important;
+  box-shadow: none !important;
+}
+
+.react-select__multi-value {
+  border-radius: 0 !important;
+  background: $light-grey !important;
+}
+
+.react-select__multi-value__remove:hover {
+  background-color: $pink !important;
+  color: $dark-pink !important;
+  border-radius: 0 !important;
+}

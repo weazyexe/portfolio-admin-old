@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 
-import '../../styles/views.scss';
+import '../../../styles/views.scss';
 
 type ButtonType = 'button' | 'submit' | 'reset' | undefined
 type ButtonColor = 'primary' | 'secondary'

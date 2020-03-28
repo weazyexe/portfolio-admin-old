@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Component } from 'react';
 
-import '../../styles/views.scss';
+import '../../../styles/views.scss';
 
 interface InputProps {
-    value: string
+    value: string | number
     hint?: string
     onChange: (value: string) => void
     className?: string

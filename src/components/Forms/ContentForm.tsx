@@ -3,9 +3,8 @@ import {Component, FormEvent} from 'react';
 import {inject, observer} from "mobx-react";
 import Content from "../../models/Content";
 import ContentFormState from "../../stores/forms/ContentFormState";
-import Input from "../Views/Input";
-import AdminPages from "../../models/AdminPages";
-import Button from "../Views/Button";
+import Input from "../Views/Controls/Input";
+import Button from "../Views/Controls/Button";
 
 
 interface ContentFormProps {

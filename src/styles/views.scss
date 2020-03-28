@@ -1,51 +1,10 @@
 @import "colors";
 
-.input {
-  font-family: 'Montserrat', sans-serif;
-  display: block;
-  background: transparent;
-  font-size: 1em;
-  padding: 0.7em;
-  border: 1px solid $grey;
-  transition: border 0.2s ease-in-out;
-  outline: none;
-
-  &:focus {
-    border: 1px solid $pink;
-  }
-}
-
-::placeholder {
-  color: $grey;
-}
-
-.button {
-  font-family: 'Montserrat', sans-serif;
-  display: block;
-  padding: 1em 2em;
-  color: $dark-grey;
-  border-style: none;
-  background: $gradient-pink;
-  transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
-  outline: none;
-  min-width: 10em;
-
-  &.secondary {
-    background: $white;
-
-    &:active {
-      background: #efefef;
-    }
-  }
-
-  &:active {
-    background: $pink;
-  }
-
-  &:hover {
-    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.1);
-  }
-}
+@import "views/button";
+@import "views/checkbox";
+@import "views/loader";
+@import "views/select";
+@import "views/input";
 
 .toast {
   background-color: $dark-grey;
@@ -62,5 +21,56 @@
   font-size: 1.4em;
   display: inline;
   margin-top: 1em;
+  font-weight: 500;
+}
+
+.project-admin {
+  width: 20em;
+  height: 20em;
+  background-color: $light-grey;
+  transition: box-shadow 0.3s ease-in-out, background 0.2s ease-in-out;
+  margin-right: 1em;
+
+  &:hover {
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.1);
+  }
+}
+
+.project-admin-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-admin-description {
+  font-size: 1em;
+  font-weight: 300;
+  word-wrap: break-spaces;
+}
+
+.project-admin-title {
+  font-size: 1.4em;
+  font-weight: 500;
+  display: inline;
+}
+
+.project-admin-id {
+  font-size: 0.7em;
+  color: $grey;
+  display: inline;
+}
+
+.project-admin-tag {
+  font-size: 1em;
+  color: $grey;
+  text-transform: lowercase;
+  display: inline-block;
+  margin-right: 0.3em;
+}
+
+.auth-welcome {
+  margin-top: 5em;
+  margin-bottom: 2em;
+  color: $dark-grey;
   font-weight: 500;
 }
