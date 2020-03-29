@@ -43,7 +43,7 @@ function App() {
             <Route path='/admin/content' component={ContentView} />
             <Route exact path='/admin/projects' component={ProjectsView} />
             <Route exact path='/admin/projects/create' component={ProjectCreateView} />
-            <Route exact path='/admin/projects/edit?pid=:id' component={ProjectEditView} />
+            <Route exact path='/admin/projects/edit' component={ProjectEditView} />
             <Redirect from='/admin' to='/admin/content' />
             <Route component={NotFound}/>
           </Switch>

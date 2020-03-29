@@ -1,7 +1,9 @@
-import {action, observable} from "mobx";
+import { action, observable } from "mobx";
 import Project from "../../models/Project";
-import {firestore, storage} from "../../lib/firebase";
-import {generateId} from "../../lib/generateId";
+import { firestore, storage } from "../../lib/firebase";
+import { generateId } from "../../lib/utils";
+import Github from "../../models/Github";
+import { getRepositoryInfo } from "../../lib/github";
 
 export default class ProjectsState {
 
@@ -17,29 +19,40 @@ export default class ProjectsState {
         const result: Project[] = [];
         for (const raw of data) {
             const project = raw.data() as Project;
-
-            const images: string[] = [];
-            for (const storageLink of project.images) {
-                images.push(await storage.ref(storageLink).getDownloadURL());
-            }
-
-            project.images = images;
             result.push(project);
         }
 
         this.projects = result;
     };
 
-    @action updateProject = async (project: Project) => {
-        await firestore.doc(`projects/${project.id}`).set(project);
-    }
+    getProject = async (id: string): Promise<Project> => {
+        return (await firestore.doc(`projects/${id}`).get()).data() as Project;
+    };
 
-    @action setProject = async (project: Project) => {
-        const id = generateId(6);
+    updateProject = async (project: Project, merge: boolean = false) => {
+        await firestore.doc(`projects/${project.id}`).set(project, { merge });
+    };
+
+    createProject = async (project: Project, id?: string) => {
+        id = id ? id : generateId(6);
         if (this.projects.some(it => it.id === id)) {
             alert('Lucker');
         } else {
             await firestore.doc(`projects/${id}`).set({ ...project, id: id });
         }
+    };
+
+    saveProjectImage = async (base64: string, projectId: string): Promise<string> => {
+        const imageName = generateId(13);
+        const extension = base64.startsWith("data:image/jpeg") ? ".jpg" : ".png";
+
+        const ref = storage.ref(`projects/${projectId}/${imageName}${extension}`);
+        await ref.putString(base64, "data_url");
+
+        return await ref.getDownloadURL();
+    };
+
+    getRepositoryState = async (repository: string) : Promise<Github> => {
+        return await getRepositoryInfo(repository);
     }
 }

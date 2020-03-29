@@ -24,7 +24,7 @@ export default class AuthView extends Component<AuthViewProps> {
         if (authState) {
             authState.email = email;
         }
-    }
+    };
 
     onPasswordChange = (password: string) => {
         const { authState } = this.props;
@@ -32,7 +32,7 @@ export default class AuthView extends Component<AuthViewProps> {
         if (authState) {
             authState.password = password;
         }
-    }
+    };
 
     onSubmit = async (e: FormEvent<HTMLFormElement>) => {
         const { authState } = this.props;
@@ -49,7 +49,7 @@ export default class AuthView extends Component<AuthViewProps> {
             }
             authState.loading = false;
         }
-    }
+    };
 
     render() {
         const { authState } = this.props;

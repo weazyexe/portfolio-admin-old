@@ -2,46 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e678b460-5052-4a81-9bd5-70bf778bd89d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/add.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectCreateView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Views/Controls/Checkbox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Views/ProjectAdminView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Views/ProjectView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/defaultTags.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/generateId.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/views/button.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/views/checkbox.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/views/input.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/views/select.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/edit.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/remove.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/visibility.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/visibility_off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Views/Controls/InputFile.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Views/ProjectAdminImages.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/defaultColors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/github.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminView.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Admin/Auth/AuthView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Auth/AuthView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/Content/ContentView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Content/ContentView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectAddEditView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectEditView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectCreateView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectCreateView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectEditView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectEditView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectsView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Projects/ProjectsView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forms/ContentForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/ContentForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Forms/ProjectForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/ProjectForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/MainView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/MainView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/ProjectView.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NotFound.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotFound.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Views/AdminHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/AdminHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Views/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/Controls/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Views/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/Controls/Input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Views/Loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/Controls/Loader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Views/Toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/Controls/Toast.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Views/Controls/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/Controls/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Views/Controls/Loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/Controls/Loader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Views/ProjectAdminView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Views/ProjectAdminView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/generateId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Github.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Github.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Project.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Project.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stores/components/AdminState.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stores/components/ProjectsState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/components/ProjectsState.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stores/forms/ProjectFormState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/forms/ProjectFormState.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/admin.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/loader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/views/loader.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/views.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/views.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/views/button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/controls/button.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/views/checkbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/controls/checkbox.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/views/input.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/controls/input.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/views/loader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/controls/loader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/views/select.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/controls/select.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +44,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="SCSS File" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -78,6 +71,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -151,7 +145,9 @@
       <option name="presentableId" value="Default" />
       <updated>1585235183012</updated>
       <workItem from="1585235209914" duration="17650000" />
-      <workItem from="1585397102375" duration="18242000" />
+      <workItem from="1585397102375" duration="19139000" />
+      <workItem from="1585471747701" duration="10715000" />
+      <workItem from="1585484009364" duration="9388000" />
     </task>
     <task id="LOCAL-00006" summary="add auth, loader &amp; admin empty pages">
       <created>1585244061072</created>
@@ -174,7 +170,28 @@
       <option name="project" value="LOCAL" />
       <updated>1585331985106</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update document title">
+      <created>1585415776170</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585415776170</updated>
+    </task>
+    <task id="LOCAL-00010" summary="refactor routing">
+      <created>1585415848374</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585415848374</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add project form styles, some refactor">
+      <created>1585415906275</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585415906275</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,45 +219,52 @@
     <MESSAGE value="add auth, loader &amp; admin empty pages" />
     <MESSAGE value="add content form, toast view, remove useless things, refactor" />
     <MESSAGE value="update readme.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme.md" />
+    <MESSAGE value="update document title" />
+    <MESSAGE value="refactor routing" />
+    <MESSAGE value="add project form styles, some refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="add project form styles, some refactor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="480" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585152628695">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="480" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585152628695" />
-    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2" timestamp="1585415848024">
+    <state x="531" y="56" width="865" height="927" key="CommitChangelistDialog2" timestamp="1585500897309">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="531" y="58" width="865" height="925" key="CommitChangelistDialog2/0.27.1920.1001@0.27.1920.1001" timestamp="1585415848024" />
+    <state x="531" y="56" width="865" height="927" key="CommitChangelistDialog2/0.27.1920.1001@0.27.1920.1001" timestamp="1585500897309" />
     <state x="100" y="127" width="1720" height="801" key="DiffContextDialog" timestamp="1585407240809">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="100" y="127" width="1720" height="801" key="DiffContextDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585407240809" />
-    <state width="1897" height="258" key="GridCell.Tab.0.bottom" timestamp="1585410541818">
+    <state width="1897" height="258" key="GridCell.Tab.0.bottom" timestamp="1585495123294">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.bottom/0.27.1920.1001@0.27.1920.1001" timestamp="1585410541818" />
-    <state width="1897" height="258" key="GridCell.Tab.0.center" timestamp="1585410541817">
+    <state width="1897" height="258" key="GridCell.Tab.0.bottom/0.27.1920.1001@0.27.1920.1001" timestamp="1585495123294" />
+    <state width="1897" height="258" key="GridCell.Tab.0.center" timestamp="1585495123292">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.center/0.27.1920.1001@0.27.1920.1001" timestamp="1585410541817" />
-    <state width="1897" height="258" key="GridCell.Tab.0.left" timestamp="1585410541816">
+    <state width="1897" height="258" key="GridCell.Tab.0.center/0.27.1920.1001@0.27.1920.1001" timestamp="1585495123292" />
+    <state width="1897" height="258" key="GridCell.Tab.0.left" timestamp="1585495123291">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.left/0.27.1920.1001@0.27.1920.1001" timestamp="1585410541816" />
-    <state width="1897" height="258" key="GridCell.Tab.0.right" timestamp="1585410541817">
+    <state width="1897" height="258" key="GridCell.Tab.0.left/0.27.1920.1001@0.27.1920.1001" timestamp="1585495123291" />
+    <state width="1897" height="258" key="GridCell.Tab.0.right" timestamp="1585495123293">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state width="1897" height="258" key="GridCell.Tab.0.right/0.27.1920.1001@0.27.1920.1001" timestamp="1585410541817" />
+    <state width="1897" height="258" key="GridCell.Tab.0.right/0.27.1920.1001@0.27.1920.1001" timestamp="1585495123293" />
     <state x="717" y="189" width="475" height="683" key="RollbackChangesDialog" timestamp="1585241913542">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="717" y="189" width="475" height="683" key="RollbackChangesDialog/0.27.1920.1001@0.27.1920.1001" timestamp="1585241913542" />
-    <state x="586" y="236" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1585331990902">
+    <state x="451" y="155" width="1022" height="737" key="SettingsEditor" timestamp="1585474132278">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="586" y="236" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1001@0.27.1920.1001" timestamp="1585331990902" />
+    <state x="451" y="155" width="1022" height="737" key="SettingsEditor/0.27.1920.1001@0.27.1920.1001" timestamp="1585474132278" />
+    <state x="586" y="236" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1585415914000">
+      <screen x="0" y="27" width="1920" height="1001" />
+    </state>
+    <state x="586" y="236" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1001@0.27.1920.1001" timestamp="1585415914000" />
     <state x="728" y="447" width="464" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585077153962">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
@@ -249,9 +273,9 @@
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
     <state x="608" y="238" width="704" height="578" key="find.popup/0.27.1920.1001@0.27.1920.1001" timestamp="1585415426000" />
-    <state x="623" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1585414918210">
+    <state x="623" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1585484620569">
       <screen x="0" y="27" width="1920" height="1001" />
     </state>
-    <state x="623" y="246" width="672" height="678" key="search.everywhere.popup/0.27.1920.1001@0.27.1920.1001" timestamp="1585414918210" />
+    <state x="623" y="246" width="672" height="678" key="search.everywhere.popup/0.27.1920.1001@0.27.1920.1001" timestamp="1585484620569" />
   </component>
 </project>

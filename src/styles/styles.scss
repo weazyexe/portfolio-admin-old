@@ -23,6 +23,10 @@ a {
   text-decoration: none;
 }
 
+input[type=file] {
+  display: none;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;

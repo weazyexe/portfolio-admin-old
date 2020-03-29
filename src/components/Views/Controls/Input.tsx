@@ -8,7 +8,7 @@ interface InputProps {
     hint?: string
     onChange: (value: string) => void
     className?: string
-    type?: string
+    type?: 'text' | 'number' | 'password'
     multiline?: boolean;
 }
 

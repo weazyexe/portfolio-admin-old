@@ -97,7 +97,6 @@ export default class ProjectsView extends Component<ProjectsViewProps> {
                                             key={project.id}
                                             project={project}
                                             onDeleteClick={() => this.onProjectDelete(project)}
-                                            onEditClick={() => this.onProjectEdit(project)}
                                             onHideClick={() => this.onProjectHide(project)} />)
                                 }
                             </div>

@@ -1,10 +1,10 @@
 @import "colors";
 
-@import "views/button";
-@import "views/checkbox";
-@import "views/loader";
-@import "views/select";
-@import "views/input";
+@import "controls/button";
+@import "controls/checkbox";
+@import "controls/loader";
+@import "controls/select";
+@import "controls/input";
 
 .toast {
   background-color: $dark-grey;
@@ -66,6 +66,35 @@
   text-transform: lowercase;
   display: inline-block;
   margin-right: 0.3em;
+}
+
+.project-admin-image-container {
+  display: inline-block;
+}
+
+.project-admin-image {
+  width: 7em;
+}
+
+.project-admin-image-delete {
+  position: relative;
+  top: -5.7em;
+  right: 1.3em;
+}
+
+.project-admin-buttons {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  flex-grow: 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.project-admin-icon {
+  width: 1em;
+  margin-left: 0.5em;
 }
 
 .auth-welcome {

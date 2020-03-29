@@ -4,7 +4,7 @@ export default interface Project {
     id?: string
     name: string
     description: string
-    github: Github
+    github?: Github
     images: string[]
     sortWeight: number
     tags: string[]
