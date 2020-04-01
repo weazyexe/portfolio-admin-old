@@ -13,6 +13,7 @@ import AuthState from "../../../stores/components/AuthState";
 import AdminPages from "../../../models/AdminPages";
 import {auth} from "../../../lib/firebase";
 import {Link} from "react-router-dom";
+import Toast from "../../Views/Controls/Toast";
 
 interface ProjectsViewProps {
     projectsState?: ProjectsState
@@ -50,20 +51,32 @@ export default class ProjectsView extends Component<ProjectsViewProps> {
         })
     };
 
-    onProjectCreate = async (project: Project) => {
-
-    };
-
     onProjectDelete = async (project: Project) => {
-
-    };
-
-    onProjectEdit = async (project: Project) => {
-
+        const { projectsState } = this.props;
+        // eslint-disable-next-line no-restricted-globals
+        if (projectsState && confirm(`Are you sure for delete ${project.name}?`)) {
+            await projectsState.deleteProject(project);
+            projectsState.projects = projectsState.projects.filter(it => it.id !== project.id);
+            alert('Ok, you did it');
+        }
     };
 
     onProjectHide = async (project: Project) => {
+        const { projectsState } = this.props;
 
+        // eslint-disable-next-line no-restricted-globals
+        if (projectsState && confirm(`Ok, rly wanna ${project.hidden ? 'show' : 'hide'} ${project.name}?`)) {
+            await projectsState.updateProject({ ...project, hidden: !project.hidden });
+            projectsState.projects = projectsState.projects.map(it => {
+                if (it.id === project.id) {
+                    return { ...project, hidden: !project.hidden };
+                } else {
+                    return it;
+                }
+            });
+
+            alert('Ok, you did it');
+        }
     };
 
     render() {
@@ -83,6 +96,9 @@ export default class ProjectsView extends Component<ProjectsViewProps> {
                     <div className='m-1'>
                         { projectsState?.loading ? <Loader /> :
                             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+
+                                {projectsState?.showToast && <Toast text='Projects list updated' />}
+
                                 <Link to='/admin/projects/create'>
                                     <div
                                         className='project-admin p-1'

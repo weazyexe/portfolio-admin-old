@@ -26,7 +26,11 @@ export default class ProjectsState {
     };
 
     getProject = async (id: string): Promise<Project> => {
-        return (await firestore.doc(`projects/${id}`).get()).data() as Project;
+        if (!this.projects.some(project => project.id === id)) {
+            return (await firestore.doc(`projects/${id}`).get()).data() as Project;
+        } else {
+            return this.projects.find(project => project.id === id)!;
+        }
     };
 
     updateProject = async (project: Project, merge: boolean = false) => {
@@ -40,6 +44,10 @@ export default class ProjectsState {
         } else {
             await firestore.doc(`projects/${id}`).set({ ...project, id: id });
         }
+    };
+
+    deleteProject = async (project: Project) => {
+        await firestore.doc(`projects/${project.id}`).delete();
     };
 
     saveProjectImage = async (base64: string, projectId: string): Promise<string> => {

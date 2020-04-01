@@ -14,9 +14,10 @@ export const queryParse = (path: string): any => {
 
     return query
         .split('&')
-        .map(keyValuePair => {
+        .reduce((prev, keyValuePair) => {
             const key = keyValuePair.split('=')[0];
             const value = keyValuePair.split('=')[1];
-            return { [key]: value };
-        });
+            prev[key] = value;
+            return prev;
+        }, {} as any);
 };

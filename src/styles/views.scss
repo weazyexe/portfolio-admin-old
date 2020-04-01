@@ -54,6 +54,11 @@
   display: inline;
 }
 
+.strike {
+  text-decoration: line-through;
+  color: $grey;
+}
+
 .project-admin-id {
   font-size: 0.7em;
   color: $grey;
@@ -95,6 +100,10 @@
 .project-admin-icon {
   width: 1em;
   margin-left: 0.5em;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .auth-welcome {

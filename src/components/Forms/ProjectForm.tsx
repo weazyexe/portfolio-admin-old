@@ -13,10 +13,8 @@ import ProjectAdminImages from "../Views/ProjectAdminImages";
 import CirclePicker from "react-color/lib/components/circle/Circle";
 import defaultColors from "../../lib/defaultColors";
 import Loader from "../Views/Controls/Loader";
-import Project from "../../models/Project";
 
 interface ProjectFormProps {
-    item?: Project
     mode: 'create' | 'edit'
     projectFormState?: ProjectFormState
     onSave: (data: any) => void
@@ -81,7 +79,7 @@ export default class ProjectForm extends Component<ProjectFormProps> {
     };
 
     render() {
-        const { projectFormState, mode, item } = this.props;
+        const { projectFormState, mode } = this.props;
 
         if (projectFormState) {
             return <div>

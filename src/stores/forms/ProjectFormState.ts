@@ -1,5 +1,4 @@
 import { observable } from "mobx";
-import Project from "../../models/Project";
 
 type OptionValue = { value: string, label: string }
 
@@ -14,5 +13,4 @@ export default class ProjectFormState {
     @observable color: string = '#1a1a1a';
 
     @observable loading = false;
-    @observable item: Project | undefined;
 }

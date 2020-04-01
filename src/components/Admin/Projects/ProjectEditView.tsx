@@ -8,26 +8,59 @@ import ProjectFormState from "../../../stores/forms/ProjectFormState";
 import AdminHeader from "../../Views/AdminHeader";
 import AdminPages from "../../../models/AdminPages";
 import ProjectForm from "../../Forms/ProjectForm";
+import {Redirect} from "react-router";
 
 interface ProjectEditViewProps {
     projectsState?: ProjectsState
-    projectFormState: ProjectFormState
+    projectFormState?: ProjectFormState
+}
+
+interface ProjectEditViewState {
+    saved: boolean
 }
 
 @inject('projectsState')
 @inject('projectFormState')
 @observer
-export default class ProjectEditView extends Component<ProjectEditViewProps> {
+export default class ProjectEditView extends Component<ProjectEditViewProps, ProjectEditViewState> {
+
+    state = {
+        saved: false
+    };
 
     async componentDidMount() {
         const { projectsState, projectFormState } = this.props;
 
         if (projectsState && projectFormState) {
             projectFormState.loading = true;
-            const params = queryParse(window.location.pathname);
-            projectFormState.item = await projectsState.getProject(params.pid);
+            const params = queryParse(window.location.search);
+            const item = await projectsState.getProject(params.pid);
+
+            projectFormState.name = item.name;
+            projectFormState.description = item.description;
+            projectFormState.color = item.color;
+            projectFormState.images = item.images;
+            projectFormState.tags = item.tags.map(it => ({ value: it, label: it }));
+            projectFormState.sortWeight = Number(item.sortWeight);
+            projectFormState.hidden = item.hidden;
+            projectFormState.github = item.github?.link!;
+
             projectFormState.loading = false;
-            this.forceUpdate();
+        }
+    }
+
+    eraseForm = () => {
+        const { projectFormState } = this.props;
+
+        if (projectFormState) {
+            projectFormState.name = '';
+            projectFormState.description = '';
+            projectFormState.color = '';
+            projectFormState.images = [];
+            projectFormState.tags = [];
+            projectFormState.sortWeight = 0;
+            projectFormState.hidden = false;
+            projectFormState.github = '';
         }
     }
 
@@ -49,33 +82,45 @@ export default class ProjectEditView extends Component<ProjectEditViewProps> {
                 }
             }
 
-            // const github = await projectsState.getRepositoryState(data.github);
+            const github = await projectsState.getRepositoryState(data.github);
+            const params = queryParse(window.location.search);
 
             const project: Project = {
-                id: data.id,
+                id: params.pid,
                 name: data.name,
                 description: data.description,
-                images: images,
+                images,
                 sortWeight: data.sortWeight,
                 tags: data.tags.map((it: any) => it.value),
                 hidden: data.hidden,
-                color: data.color
+                color: data.color,
+                github
             };
 
             await projectsState.updateProject(project, true);
             projectFormState.loading = false;
+            this.eraseForm();
+
+            this.setState({
+                saved: true
+            });
         }
     };
 
     render() {
         const { projectFormState } = this.props;
+        const { saved } = this.state;
         document.title = "edit project - weazyexe.dev";
+
+        if (saved) {
+            return <Redirect to='/admin/projects'/>;
+        }
 
         if (projectFormState) {
             return <div>
                 <AdminHeader page={AdminPages.PROJECTS}/>
                 <div className='m-1'>
-                    <ProjectForm mode='edit' item={projectFormState.item} onSave={(data) => this.onSave(data)} />
+                    <ProjectForm mode='edit' onSave={(data) => this.onSave(data)} />
                 </div>
             </div>;
         }

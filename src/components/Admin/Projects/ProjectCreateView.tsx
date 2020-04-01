@@ -41,7 +41,7 @@ export default class ProjectCreateView extends Component<ProjectCreateViewProps>
                 description: data.description,
                 github: github,
                 images: images,
-                sortWeight: data.sortWeight,
+                sortWeight: Number(data.sortWeight),
                 tags: data.tags.map((it: any) => it.value),
                 hidden: data.hidden,
                 color: data.color

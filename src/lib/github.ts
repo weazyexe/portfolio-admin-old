@@ -25,7 +25,6 @@ export const getRepositoryInfo = async (repository: string): Promise<Github> => 
 
     // removing {/branch} from url
     const branchesResponse = await axios.get(response.data.branches_url.slice(0, bLen - 9));
-    console.log(branchesResponse);
 
     return {
         stargazers: response.data.stargazers_count,
