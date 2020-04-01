@@ -112,3 +112,49 @@
   color: $dark-grey;
   font-weight: 500;
 }
+
+.main-container {
+  position: relative;
+  padding: 2em;
+  height: 100vh;
+}
+
+.main-container::before {
+  content: "";
+  position: absolute;
+  background: url("../assets/weazy.png");
+  background-size: cover;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.main-title {
+  font-size: 4em;
+  margin-top: 4em;
+  font-weight: 700;
+  color: $dark-grey;
+}
+
+.main-text {
+  font-size: 1.8em;
+  margin-top: 1em;
+  font-weight: 400;
+  color: $grey;
+}
+
+.main-link-icon {
+  fill: $red;
+  width: 2em;
+  height: 2em;
+  transition: fill 0.3s ease-in-out;
+  display: inline-block;
+  margin-right: 2em;
+
+  &:hover {
+    fill: $light-red;
+  }
+}

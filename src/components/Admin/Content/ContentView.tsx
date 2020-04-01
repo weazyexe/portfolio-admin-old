@@ -37,6 +37,17 @@ export default class ContentView extends Component<ContentViewProps> {
         }
     }
 
+    showToast() {
+        const { contentState } = this.props;
+
+        if (contentState) {
+            contentState.showToast = true;
+            setTimeout(() => {
+                contentState.showToast = false;
+            }, 3000);
+        }
+    };
+
     authStateChanged = () => {
         const { authState } = this.props;
 
@@ -52,13 +63,13 @@ export default class ContentView extends Component<ContentViewProps> {
         const { contentState } = this.props;
 
         if (contentState) {
-            contentState.showToast = false;
             contentState.loading = true;
             await contentState.updateContent(item);
+            contentState.content = item;
             contentState.loading = false;
-            contentState.showToast = true;
+            this.showToast();
         }
-    }
+    };
 
     render() {
         const { authState, contentState } = this.props;

@@ -6,7 +6,7 @@
 }
 
 .react-select__control--is-focused {
-  border-color: $pink !important;
+  border-color: $red !important;
   box-shadow: none !important;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .react-select__multi-value__remove:hover {
-  background-color: $pink !important;
+  background-color: $red !important;
   color: $dark-pink !important;
   border-radius: 0 !important;
 }

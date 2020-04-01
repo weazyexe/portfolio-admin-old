@@ -40,6 +40,18 @@ export default class ProjectsView extends Component<ProjectsViewProps> {
         }
     }
 
+    showToast(text: string) {
+        const { projectsState } = this.props;
+
+        if (projectsState) {
+            projectsState.toastText = text;
+            projectsState.showToast = true;
+            setTimeout(() => {
+                projectsState.showToast = false;
+            }, 3000);
+        }
+    };
+
     authStateChanged = () => {
         const { authState } = this.props;
 
@@ -57,7 +69,7 @@ export default class ProjectsView extends Component<ProjectsViewProps> {
         if (projectsState && confirm(`Are you sure for delete ${project.name}?`)) {
             await projectsState.deleteProject(project);
             projectsState.projects = projectsState.projects.filter(it => it.id !== project.id);
-            alert('Ok, you did it');
+            this.showToast('Project deleted');
         }
     };
 
@@ -75,7 +87,7 @@ export default class ProjectsView extends Component<ProjectsViewProps> {
                 }
             });
 
-            alert('Ok, you did it');
+            this.showToast(`As you wish. Project is ${project.hidden ? 'visible' : 'invisible'} now`);
         }
     };
 
@@ -97,7 +109,7 @@ export default class ProjectsView extends Component<ProjectsViewProps> {
                         { projectsState?.loading ? <Loader /> :
                             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
 
-                                {projectsState?.showToast && <Toast text='Projects list updated' />}
+                                {projectsState?.showToast && <Toast text={projectsState?.toastText} />}
 
                                 <Link to='/admin/projects/create'>
                                     <div

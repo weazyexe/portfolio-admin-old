@@ -28,11 +28,11 @@
   background: #ccc;
 }
 .control input:checked ~ .control__indicator {
-  background: $pink;
+  background: $red;
 }
 .control:hover input:not([disabled]):checked ~ .control__indicator,
 .control input:checked:focus ~ .control__indicator {
-  background: $pink;
+  background: $red;
 }
 .control input:disabled ~ .control__indicator {
   background: #e6e6e6;

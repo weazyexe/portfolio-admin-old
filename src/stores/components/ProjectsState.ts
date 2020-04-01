@@ -10,6 +10,8 @@ export default class ProjectsState {
     @observable projects: Project[] = [];
 
     @observable showToast = false;
+    toastText: string = '';
+
     @observable loading = false;
 
     @action getProjects = async () => {

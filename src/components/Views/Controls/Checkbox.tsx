@@ -1,5 +1,4 @@
 import * as React from "react";
-import {Component} from "react";
 
 interface CheckboxProps {
     title: string
@@ -8,26 +7,19 @@ interface CheckboxProps {
     onChange: (value: boolean) => void
 }
 
-export default class Checkbox extends Component<CheckboxProps> {
+const Checkbox = (props: CheckboxProps) => {
+    const { title, value, className, onChange } = props;
 
-    render() {
-        const { title, value, className, onChange } = this.props;
-
-        return <React.Fragment>
-            <label className={`control control--checkbox ${className}`}>
-                {title}
-                <input
-                    type="checkbox"
-                    checked={value}
-                    onChange={(e) => onChange(e.target.checked)}/>
-                <div className="control__indicator"/>
-            </label>
-            {/*<input
+    return <React.Fragment>
+        <label className={`control control--checkbox ${className}`}>
+            {title}
+            <input
+                type="checkbox"
                 checked={value}
-                onChange={(e) => onChange(e.target.checked)}
-                className={`checkbox ${className}`}
-                type='checkbox'/>
-            <label>{title}</label>*/}
-        </React.Fragment>;
-    }
-}
+                onChange={(e) => onChange(e.target.checked)}/>
+            <div className="control__indicator"/>
+        </label>
+    </React.Fragment>;
+};
+
+export default Checkbox;
