@@ -9,14 +9,21 @@ import '../../../styles/styles.scss';
 import '../../../styles/views.scss';
 import Loader from "../../Views/Controls/Loader";
 import { Redirect } from "react-router";
+import { analytics, logPageView } from "../../../lib/firebase";
+import { AUTH_TITLE } from "../../../lib/documentTitles";
 
 interface AuthViewProps {
     authState?: AuthState
 }
 
+
 @inject('authState')
 @observer
 export default class AuthView extends Component<AuthViewProps> {
+
+    componentDidMount(): void {
+        logPageView(AUTH_TITLE, window.location.pathname);
+    }
 
     onEmailChange = (email: string) => {
         const { authState } = this.props;
@@ -46,6 +53,7 @@ export default class AuthView extends Component<AuthViewProps> {
             } else {
                 authState.email = '';
                 authState.password = '';
+                analytics.logEvent('login', { method: 'Firebase Auth' });
             }
             authState.loading = false;
         }
@@ -54,7 +62,7 @@ export default class AuthView extends Component<AuthViewProps> {
     render() {
         const { authState } = this.props;
 
-        document.title = 'auth - weazyexe.dev';
+        document.title = AUTH_TITLE;
 
         if (authState?.isSignedIn) {
             return <Redirect to='/admin' />

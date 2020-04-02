@@ -7,6 +7,8 @@ import ContentState from "../../stores/components/ContentState";
 
 import '../../styles/views.scss';
 import ContactsView from "../Views/ContactsView";
+import { PORTFOLIO_TITLE } from "../../lib/documentTitles";
+import { logPageView } from "../../lib/firebase";
 
 interface MainViewProps {
     projectsState?: ProjectsState
@@ -32,11 +34,13 @@ export default class MainView extends Component<MainViewProps> {
                 projectsState.loading = false;
             });
         }
+
+        logPageView(PORTFOLIO_TITLE, window.location.pathname);
     }
 
     render() {
         const { projectsState, contentState } = this.props;
-        document.title = 'portfolio - weazyexe.dev';
+        document.title = PORTFOLIO_TITLE;
 
         if (projectsState && contentState) {
             const { content } = contentState;

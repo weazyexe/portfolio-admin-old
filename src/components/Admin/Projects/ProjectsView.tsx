@@ -1,19 +1,20 @@
 import * as React from 'react';
-import {Component} from 'react';
-import {inject, observer} from "mobx-react";
+import { Component } from 'react';
+import { inject, observer } from "mobx-react";
 import ProjectsState from "../../../stores/components/ProjectsState";
 import Loader from "../../Views/Controls/Loader";
 import ProjectAdminView from "../../Views/ProjectAdminView";
 import Project from "../../../models/Project";
 
 import add from '../../../assets/add.svg';
-import {Redirect} from "react-router";
+import { Redirect } from "react-router";
 import AdminHeader from "../../Views/AdminHeader";
 import AuthState from "../../../stores/components/AuthState";
 import AdminPages from "../../../models/AdminPages";
-import {auth} from "../../../lib/firebase";
-import {Link} from "react-router-dom";
+import { auth, logPageView } from "../../../lib/firebase";
+import { Link } from "react-router-dom";
 import Toast from "../../Views/Controls/Toast";
+import { PROJECTS_TITLE } from "../../../lib/documentTitles";
 
 interface ProjectsViewProps {
     projectsState?: ProjectsState
@@ -38,6 +39,8 @@ export default class ProjectsView extends Component<ProjectsViewProps> {
             await projectsState.getProjects();
             projectsState.loading = false;
         }
+
+        logPageView(PROJECTS_TITLE, window.location.pathname);
     }
 
     showToast(text: string) {
@@ -93,7 +96,7 @@ export default class ProjectsView extends Component<ProjectsViewProps> {
 
     render() {
         const { projectsState, authState } = this.props;
-        document.title = 'projects - weazyexe.dev';
+        document.title = PROJECTS_TITLE;
 
         if (!authState?.isSignedIn) {
             return <Redirect to='/auth' />;

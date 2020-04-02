@@ -2,13 +2,15 @@ import * as React from 'react';
 import { Component } from 'react';
 import { queryParse } from "../../../lib/utils";
 import Project from "../../../models/Project";
-import {inject, observer} from "mobx-react";
+import { inject, observer } from "mobx-react";
 import ProjectsState from "../../../stores/components/ProjectsState";
 import ProjectFormState from "../../../stores/forms/ProjectFormState";
 import AdminHeader from "../../Views/AdminHeader";
 import AdminPages from "../../../models/AdminPages";
 import ProjectForm from "../../Forms/ProjectForm";
-import {Redirect} from "react-router";
+import { Redirect } from "react-router";
+import { EDIT_PROJECT_TITLE } from "../../../lib/documentTitles";
+import { logPageView } from "../../../lib/firebase";
 
 interface ProjectEditViewProps {
     projectsState?: ProjectsState
@@ -47,6 +49,8 @@ export default class ProjectEditView extends Component<ProjectEditViewProps, Pro
 
             projectFormState.loading = false;
         }
+
+        logPageView(EDIT_PROJECT_TITLE, window.location.pathname);
     }
 
     eraseForm = () => {
@@ -110,7 +114,7 @@ export default class ProjectEditView extends Component<ProjectEditViewProps, Pro
     render() {
         const { projectFormState } = this.props;
         const { saved } = this.state;
-        document.title = "edit project - weazyexe.dev";
+        document.title = EDIT_PROJECT_TITLE;
 
         if (saved) {
             return <Redirect to='/admin/projects'/>;

@@ -8,6 +8,8 @@ import AdminHeader from "../../Views/AdminHeader";
 import { generateId } from "../../../lib/utils";
 import Project from "../../../models/Project";
 import ProjectFormState from "../../../stores/forms/ProjectFormState";
+import { logPageView } from "../../../lib/firebase";
+import { CREATE_PROJECT_TITLE } from "../../../lib/documentTitles";
 
 interface ProjectCreateViewProps {
     projectsState?: ProjectsState
@@ -18,6 +20,10 @@ interface ProjectCreateViewProps {
 @inject('projectsState')
 @observer
 export default class ProjectCreateView extends Component<ProjectCreateViewProps> {
+
+    componentDidMount(): void {
+        logPageView(CREATE_PROJECT_TITLE, window.location.pathname);
+    }
 
     onSave = async (data: any) => {
         const { projectsState, projectFormState } = this.props;

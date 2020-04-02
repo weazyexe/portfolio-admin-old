@@ -9,8 +9,9 @@ import Toast from "../../Views/Controls/Toast";
 import AdminHeader from "../../Views/AdminHeader";
 import AdminPages from "../../../models/AdminPages";
 import AuthState from "../../../stores/components/AuthState";
-import {auth} from "../../../lib/firebase";
-import {Redirect} from "react-router-dom";
+import { auth, logPageView } from "../../../lib/firebase";
+import { Redirect } from "react-router-dom";
+import { CONTENT_TITLE } from "../../../lib/documentTitles";
 
 interface ContentViewProps {
     contentState?: ContentState
@@ -35,6 +36,8 @@ export default class ContentView extends Component<ContentViewProps> {
             await contentState.getContent();
             contentState.loading = false;
         }
+
+        logPageView(CONTENT_TITLE, window.location.pathname);
     }
 
     showToast() {
@@ -74,7 +77,7 @@ export default class ContentView extends Component<ContentViewProps> {
     render() {
         const { authState, contentState } = this.props;
 
-        document.title = 'content - weazyexe.dev';
+        document.title = CONTENT_TITLE;
 
         if (!authState?.isSignedIn) {
             return <Redirect to='/auth' />;
