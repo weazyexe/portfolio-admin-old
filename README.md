@@ -14,4 +14,4 @@ Hello %%username%%! It's my portfolio project.
 * Firebase (auth, firestore, hosting)
 
 ### Where
-Check it out _soon_ here - [weazyexe.dev](https://weazyexe.dev)
+Check it out here - [weazyexe.dev](https://weazyexe.dev) (alpha)
