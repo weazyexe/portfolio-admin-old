@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import "../../styles/views.scss";
-import removeButton from "../../assets/remove.svg";
+import removeButton from "../../assets/ui/remove.svg";
 
 interface ProjectAdminImagesProps {
     images: string[]

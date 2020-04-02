@@ -1,11 +1,11 @@
 /* eslint-disable */
 import * as React from "react";
 
-import { ReactComponent as Github } from "../../assets/github.svg";
-import { ReactComponent as Telegram } from "../../assets/telegram.svg";
-import { ReactComponent as Twitter } from "../../assets/twitter.svg";
-import { ReactComponent as Vk } from "../../assets/vk.svg";
-import { ReactComponent as Instagram } from "../../assets/instagram.svg";
+import { ReactComponent as Github } from "../../assets/socials/github.svg";
+import { ReactComponent as Telegram } from "../../assets/socials/telegram.svg";
+import { ReactComponent as Twitter } from "../../assets/socials/twitter.svg";
+import { ReactComponent as Vk } from "../../assets/socials/vk.svg";
+import { ReactComponent as Instagram } from "../../assets/socials/instagram.svg";
 
 import Contacts from "../../models/Contacts";
 

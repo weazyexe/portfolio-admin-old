@@ -3,10 +3,10 @@ import Project from "../../models/Project";
 
 import '../../styles/views.scss';
 
-import deleteButton from '../../assets/delete.svg';
-import editButton from '../../assets/edit.svg';
-import visibilityButton from '../../assets/visibility.svg';
-import visibilityOffButton from '../../assets/visibility_off.svg';
+import deleteButton from '../../assets/ui/delete.svg';
+import editButton from '../../assets/ui/edit.svg';
+import visibilityButton from '../../assets/ui/visibility.svg';
+import visibilityOffButton from '../../assets/ui/visibility_off.svg';
 import {Link} from "react-router-dom";
 
 interface ProjectAdminViewProps {

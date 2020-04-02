@@ -1,0 +1,80 @@
+@import "colors";
+
+$duration: 0.2s;
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: $red; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 5em; /* Place content 60px from the top */
+  transition: $duration; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: $white;
+  display: block;
+  transition: $duration;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: $light-grey;
+}
+
+/* Position and style the close button (top right corner) */
+.menu-nav-close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  width: 1em;
+  margin-top: 0.5em;
+
+  &:hover {
+    fill: $light-grey;
+    cursor: pointer;
+  }
+}
+
+.menu-nav-button {
+  width: 2em;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.opened {
+  width: 15em;
+}
+
+.closed {
+  width: 0;
+}
+
+.opened-main {
+  margin-left: 15em;
+  transition: margin-left $duration;
+}
+
+.closed-main {
+  margin-left: 0;
+  transition: margin-left $duration;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 1em;}
+  .sidenav a {font-size: 1.2em;}
+}

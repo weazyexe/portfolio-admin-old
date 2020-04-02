@@ -1,64 +1,74 @@
-import * as React from 'react';
-import { Component } from 'react';
+import * as React from "react";
+import { Component } from "react";
 import { inject, observer } from "mobx-react";
-import ProjectsState from "../../stores/components/ProjectsState";
 import Loader from "../Views/Controls/Loader";
 import ContentState from "../../stores/components/ContentState";
 
-import '../../styles/views.scss';
 import ContactsView from "../Views/ContactsView";
-import { PORTFOLIO_TITLE } from "../../lib/documentTitles";
+import { MAIN_TITLE } from "../../lib/documentTitles";
 import { logPageView } from "../../lib/firebase";
+import NavigationMenu from "../Views/NavigationMenu";
+
+import { ReactComponent as Menu } from "../../assets/ui/menu.svg";
+import "../../styles/views.scss";
+import "../../styles/navigation.scss"
 
 interface MainViewProps {
-    projectsState?: ProjectsState
     contentState?: ContentState
 }
 
-@inject('projectsState')
+interface MainViewState {
+    navOpened: boolean
+}
+
 @inject('contentState')
 @observer
-export default class MainView extends Component<MainViewProps> {
+export default class MainView extends Component<MainViewProps, MainViewState> {
+
+    state = {
+        navOpened: false
+    }
 
     async componentDidMount() {
-        const { projectsState, contentState } = this.props;
+        const { contentState } = this.props;
 
-        if (projectsState && contentState) {
+        if (contentState) {
             contentState.loading = true;
-            projectsState.loading = true;
-
             await contentState.getContent();
             contentState.loading = false;
-
-            projectsState.getProjects().then(() => {
-                projectsState.loading = false;
-            });
         }
 
-        logPageView(PORTFOLIO_TITLE, window.location.pathname);
+        logPageView(MAIN_TITLE, window.location.pathname);
+    }
+
+    onNavigationClick() {
+        this.setState({
+            navOpened: !this.state.navOpened
+        })
     }
 
     render() {
-        const { projectsState, contentState } = this.props;
-        document.title = PORTFOLIO_TITLE;
+        const { contentState } = this.props;
+        const { navOpened } = this.state;
+        document.title = MAIN_TITLE;
 
-        if (projectsState && contentState) {
+        if (contentState) {
             const { content } = contentState;
 
             return <div className='main-container'>
                 {contentState?.loading ? <Loader/> :
-                    <div>
-                        <div className='main-title' dangerouslySetInnerHTML={{ __html: content.title }}/>
-                        <div className='main-text' dangerouslySetInnerHTML={{ __html: content.text }}/>
-
-                        <ContactsView contacts={content.contacts} className="mt-1 mb-5" />
-                    </div>
-                }
-                {projectsState?.loading && contentState?.loading ? <div/> :
-                    projectsState?.loading && !contentState?.loading ? <Loader/> :
-                        <div>
-
+                    <React.Fragment>
+                        <NavigationMenu opened={navOpened} onClick={() => this.onNavigationClick()} />
+                        <div className='main-link-icon menu-nav-button' onClick={() => this.onNavigationClick()}>
+                            <Menu />
                         </div>
+                        <div className={navOpened ? 'opened-main' : 'closed-main'}>
+                            <div className='main-title' dangerouslySetInnerHTML={{ __html: content.title }}/>
+                            <div className='main-text' dangerouslySetInnerHTML={{ __html: content.text }}/>
+
+                            <ContactsView contacts={content.contacts} className="mt-1 mb-5" />
+                        </div>
+                    </React.Fragment>
                 }
             </div>;
         }

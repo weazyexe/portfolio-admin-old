@@ -6,7 +6,7 @@ import Loader from "../../Views/Controls/Loader";
 import ProjectAdminView from "../../Views/ProjectAdminView";
 import Project from "../../../models/Project";
 
-import add from '../../../assets/add.svg';
+import add from '../../../assets/ui/add.svg';
 import { Redirect } from "react-router";
 import AdminHeader from "../../Views/AdminHeader";
 import AuthState from "../../../stores/components/AuthState";
@@ -24,7 +24,7 @@ interface ProjectsViewProps {
 @inject('projectsState')
 @inject('authState')
 @observer
-export default class ProjectsView extends Component<ProjectsViewProps> {
+export default class ProjectsAdminView extends Component<ProjectsViewProps> {
 
     constructor(props: ProjectsViewProps) {
         super(props);
