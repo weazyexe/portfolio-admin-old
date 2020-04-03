@@ -12,6 +12,7 @@ import AuthState from "../../../stores/components/AuthState";
 import { auth, logPageView } from "../../../lib/firebase";
 import { Redirect } from "react-router-dom";
 import { CONTENT_TITLE } from "../../../lib/documentTitles";
+import AuthComponent from "../AuthComponent";
 
 interface ContentViewProps {
     contentState?: ContentState
@@ -19,14 +20,8 @@ interface ContentViewProps {
 }
 
 @inject('contentState')
-@inject('authState')
 @observer
-export default class ContentView extends Component<ContentViewProps> {
-
-    constructor(props: ContentViewProps) {
-        super(props);
-        this.authStateChanged();
-    }
+export default class ContentView extends AuthComponent<ContentViewProps, {}> {
 
     async componentDidMount() {
         const { contentState } = this.props;
@@ -78,10 +73,6 @@ export default class ContentView extends Component<ContentViewProps> {
         const { authState, contentState } = this.props;
 
         document.title = CONTENT_TITLE;
-
-        if (!authState?.isSignedIn) {
-            return <Redirect to='/auth' />;
-        }
 
         if (contentState && authState) {
             return authState.loading ? <Loader/>

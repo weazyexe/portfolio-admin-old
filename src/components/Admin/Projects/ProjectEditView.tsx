@@ -10,17 +10,20 @@ import AdminPages from "../../../models/AdminPages";
 import ProjectForm from "../../Forms/ProjectForm";
 import { Redirect } from "react-router";
 import { EDIT_PROJECT_TITLE } from "../../../lib/documentTitles";
-import { logPageView } from "../../../lib/firebase";
+import {auth, logPageView} from "../../../lib/firebase";
+import AuthState from "../../../stores/components/AuthState";
 
 interface ProjectEditViewProps {
     projectsState?: ProjectsState
     projectFormState?: ProjectFormState
+    authState?: AuthState
 }
 
 interface ProjectEditViewState {
     saved: boolean
 }
 
+@inject('authState')
 @inject('projectsState')
 @inject('projectFormState')
 @observer
@@ -28,6 +31,17 @@ export default class ProjectEditView extends Component<ProjectEditViewProps, Pro
 
     state = {
         saved: false
+    };
+
+    authStateChanged = () => {
+        const { authState } = this.props;
+
+        auth.onAuthStateChanged((user) => {
+            if (authState) {
+                authState.isSignedIn = !!user;
+                authState.loading = false;
+            }
+        })
     };
 
     async componentDidMount() {

@@ -8,14 +8,17 @@ import AdminHeader from "../../Views/AdminHeader";
 import { generateId } from "../../../lib/utils";
 import Project from "../../../models/Project";
 import ProjectFormState from "../../../stores/forms/ProjectFormState";
-import { logPageView } from "../../../lib/firebase";
+import {auth, logPageView} from "../../../lib/firebase";
 import { CREATE_PROJECT_TITLE } from "../../../lib/documentTitles";
+import AuthState from "../../../stores/components/AuthState";
 
 interface ProjectCreateViewProps {
     projectsState?: ProjectsState
     projectFormState?: ProjectFormState
+    authState?: AuthState
 }
 
+@inject('authState')
 @inject('projectFormState')
 @inject('projectsState')
 @observer
@@ -24,6 +27,17 @@ export default class ProjectCreateView extends Component<ProjectCreateViewProps>
     componentDidMount(): void {
         logPageView(CREATE_PROJECT_TITLE, window.location.pathname);
     }
+
+    authStateChanged = () => {
+        const { authState } = this.props;
+
+        auth.onAuthStateChanged((user) => {
+            if (authState) {
+                authState.isSignedIn = !!user;
+                authState.loading = false;
+            }
+        })
+    };
 
     onSave = async (data: any) => {
         const { projectsState, projectFormState } = this.props;
