@@ -11,6 +11,7 @@ import Loader from "../../Views/Controls/Loader";
 import { Redirect } from "react-router";
 import { analytics, logPageView } from "../../../lib/firebase";
 import { AUTH_TITLE } from "../../../lib/documentTitles";
+import {Link} from "react-router-dom";
 
 interface AuthViewProps {
     authState?: AuthState
@@ -101,7 +102,9 @@ export default class AuthView extends Component<AuthViewProps> {
                             </div>
 
                             <div>
-                                <Button className='my-1 mx-auto' text='Leave' type='submit' color='secondary' />
+                                <Link to="/">
+                                    <Button className='my-1 mx-auto' text='Leave' type='submit' color='secondary' />
+                                </Link>
                             </div>
                         </form>
                     }
