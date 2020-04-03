@@ -75,11 +75,12 @@ export default class ProjectEditView extends Component<ProjectEditViewProps, Pro
             projectFormState.loading = true;
 
             const images: string[] = [];
+            const params = queryParse(window.location.search);
 
             for (const img of data.images) {
                 // if the image is new added
                 if (img.includes("data:image/")) {
-                    const link = await projectsState.saveProjectImage(img, data.id);
+                    const link = await projectsState.saveProjectImage(img, params.pid);
                     images.push(link);
                 } else {
                     images.push(img);
@@ -87,7 +88,6 @@ export default class ProjectEditView extends Component<ProjectEditViewProps, Pro
             }
 
             const github = await projectsState.getRepositoryState(data.github);
-            const params = queryParse(window.location.search);
 
             const project: Project = {
                 id: params.pid,
