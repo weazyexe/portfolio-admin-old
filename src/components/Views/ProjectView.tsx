@@ -41,6 +41,7 @@ export default class ProjectView extends Component<ProjectViewProps, ProjectView
                 </div>
                 <div className="mt-1">
                     <div className="project-github-info" style={{ color: lightenDarkenColor(project.color, -100) }}>
+                        {/* eslint-disable-next-line react/jsx-no-target-blank */}
                         <a href={`https://github.com/${project.github?.link}`} target="_blank">
                             <Octicon size={20} icon={MarkGithub} className="mr-1"/>
                             GitHub
