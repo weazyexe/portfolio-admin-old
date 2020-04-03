@@ -62,7 +62,7 @@ export default class MainView extends Component<MainViewProps, MainViewState> {
                         <div className='main-link-icon menu-nav-button' onClick={() => this.onNavigationClick()}>
                             <Menu />
                         </div>
-                        <div className={navOpened ? 'opened-main' : 'closed-main'}>
+                        <div>
                             <div className='main-title' dangerouslySetInnerHTML={{ __html: content.title }}/>
                             <div className='main-text' dangerouslySetInnerHTML={{ __html: content.text }}/>
 

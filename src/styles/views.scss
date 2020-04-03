@@ -71,6 +71,7 @@
   text-transform: lowercase;
   display: inline-block;
   margin-right: 0.3em;
+  margin-bottom: 0.5em;
 }
 
 .project-admin-image-container {
@@ -156,5 +157,133 @@
 
   &:hover {
     fill: $light-red;
+  }
+}
+
+.project-title {
+  font-weight: 700;
+  color: $dark-grey;
+}
+
+.project-description {
+  font-weight: 400;
+  color: $dark-grey;
+}
+
+.project-github-info {
+  display: inline-block;
+  margin-right: 2em;
+  margin-bottom: 0.5em;
+  color: $grey;
+  fill: $grey;
+}
+
+.project-arrow {
+  width: 5em;
+  display: inline-block;
+  opacity: 0.2;
+  margin-left: 1em;
+  margin-right: 1em;
+
+  animation: blink-animation 2s steps(20, start) infinite;
+  -webkit-animation: blink-animation 2s steps(20, start) infinite;
+  transition: opacity 0.3s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@keyframes blink-animation {
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .project-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em
+  }
+
+  .project-content-container {
+    flex-grow: 1;
+    padding-left: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+
+  .project-images-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-title {
+    font-size: 3em;
+  }
+
+  .project-description {
+    width: 50vw;
+    font-size: 1.4em;
+    margin-top: 1em;
+  }
+
+  .project-image {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em
+  }
+
+  .project-content-container {
+    padding-left: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+
+  .project-images-container {
+    display: none;
+  }
+
+  .project-title {
+    font-size: 3em;
+  }
+
+  .project-description {
+    width: 80vw;
+    font-size: 1.3em;
+    margin-top: 1em;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .project-title {
+    font-size: 2.5em;
+  }
+
+  .project-description {
+    width: 80vw;
+    font-size: 1em;
+    margin-top: 1em;
   }
 }

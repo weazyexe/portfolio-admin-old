@@ -49,6 +49,9 @@ $duration: 0.2s;
 
 .menu-nav-button {
   width: 2em;
+  position: fixed;
+  top: 2em;
+  left: 2em;
 
   &:hover {
     cursor: pointer;

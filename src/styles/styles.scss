@@ -13,6 +13,10 @@ html {
   background: $white;
 }
 
+body {
+  margin: 0;
+}
+
 textarea {
   resize: none;
   width: 50em;
@@ -21,6 +25,7 @@ textarea {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 input[type=file] {

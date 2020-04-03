@@ -9,6 +9,7 @@ import { PROJECTS_TITLE } from "../../lib/documentTitles";
 import {logPageView} from "../../lib/firebase";
 
 import "../../styles/navigation.scss";
+import ProjectView from "../Views/ProjectView";
 
 interface ProjectsViewProps {
     projectsState?: ProjectsState
@@ -51,15 +52,18 @@ export default class ProjectsView extends Component<ProjectsViewProps, ProjectsV
         if (projectsState) {
             const { projects } = projectsState;
 
-            return <div className='main-container'>
+            return <div>
                 {projectsState?.loading ? <Loader/> :
                     <React.Fragment>
                         <NavigationMenu opened={navOpened} onClick={() => this.onNavigationClick()} />
                         <div className='main-link-icon menu-nav-button' onClick={() => this.onNavigationClick()}>
                             <Menu />
                         </div>
-                        <div className={navOpened ? 'opened-main' : 'closed-main'}>
-                            projects
+                        <div>
+                            {projects
+                                .filter(project => !project.hidden)
+                                .sort((a, b) => a.sortWeight > b.sortWeight ? -1 : 1)
+                                .map(project => <ProjectView key={project.id} project={project}/>)}
                         </div>
                     </React.Fragment>
                 }
