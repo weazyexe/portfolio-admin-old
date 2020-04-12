@@ -66,7 +66,7 @@ export default class MainView extends Component<MainViewProps, MainViewState> {
                             <div className='main-title' dangerouslySetInnerHTML={{ __html: content.title }}/>
                             <div className='main-text' dangerouslySetInnerHTML={{ __html: content.text }}/>
 
-                            <ContactsView contacts={content.contacts} className="mt-1 mb-5" />
+                            <ContactsView contacts={content.contacts} className="mt-2 mb-5" />
                         </div>
                     </React.Fragment>
                 }

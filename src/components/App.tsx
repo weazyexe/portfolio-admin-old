@@ -28,32 +28,32 @@ const projectsState = new ProjectsState();
 const authState = new AuthState();
 
 function App() {
-  return (
-    <div>
-      <Provider
-          projectsState={projectsState}
-          authState={authState}
-          contentState={contentState}
-          contentFormState={contentFormState}
-          projectFormState={projectFormState}>
+    return (
+        <div>
+            <Provider
+                projectsState={projectsState}
+                authState={authState}
+                contentState={contentState}
+                contentFormState={contentFormState}
+                projectFormState={projectFormState}>
 
-        <BrowserRouter>
-          <Switch>
-            <Route exact path='/' component={MainView} />
-            <Route exact path='/projects' component={ProjectsView} />
-            <Route path='/auth' component={AuthView} />
-            <Route path='/admin/content' component={ContentView} />
-            <Route exact path='/admin/projects' component={ProjectsAdminView} />
-            <Route exact path='/admin/projects/create' component={ProjectCreateView} />
-            <Route exact path='/admin/projects/edit' component={ProjectEditView} />
-            <Redirect from='/admin' to='/admin/content' />
-            <Route component={NotFound}/>
-          </Switch>
-        </BrowserRouter>
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path='/' component={MainView}/>
+                        <Route exact path='/projects' component={ProjectsView}/>
+                        <Route path='/auth' component={AuthView}/>
+                        <Route path='/admin/content' component={ContentView}/>
+                        <Route exact path='/admin/projects' component={ProjectsAdminView}/>
+                        <Route exact path='/admin/projects/create' component={ProjectCreateView}/>
+                        <Route exact path='/admin/projects/edit' component={ProjectEditView}/>
+                        <Redirect from='/admin' to='/admin/content'/>
+                        <Route component={NotFound}/>
+                    </Switch>
+                </BrowserRouter>
 
-      </Provider>
-    </div>
-  );
+            </Provider>
+        </div>
+    );
 }
 
 export default App;

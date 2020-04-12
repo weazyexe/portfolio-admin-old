@@ -115,22 +115,8 @@
 }
 
 .main-container {
-  position: relative;
   padding: 2em;
   height: 100vh;
-}
-
-.main-container::before {
-  content: "";
-  position: absolute;
-  background: url("../assets/weazy.png");
-  background-size: cover;
-  opacity: 0.6;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
 
 .main-title {
