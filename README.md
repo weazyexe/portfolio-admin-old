@@ -1,9 +1,5 @@
 # Portfolio
-Hello %%username%%! It's my portfolio project.
-
-### What
-* Admin panel (edit content & projects)
-* Main page with projects
+Hello %%username%%! It's my portfolio admin page for editing all portfolio content
 
 ### How
 * React
@@ -12,6 +8,3 @@ Hello %%username%%! It's my portfolio project.
 * Node.js
 * mobx
 * Firebase (auth, firestore, hosting)
-
-### Where
-Check it out here - [weazyexe.dev](https://weazyexe.dev) (alpha)
