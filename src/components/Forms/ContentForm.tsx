@@ -20,7 +20,6 @@ export default class ContentForm extends Component<ContentFormProps> {
     componentDidMount() {
         const { contentFormState, item } = this.props;
 
-        console.log('mount');
         if (contentFormState) {
             contentFormState.title = item.title;
             contentFormState.text = item.text;
@@ -45,9 +44,6 @@ export default class ContentForm extends Component<ContentFormProps> {
         e.preventDefault();
 
         if (contentFormState) {
-            console.log('submit');
-            console.log(contentFormState.title);
-            console.log(contentFormState.text);
             const data: Content = {
                 title: contentFormState.title,
                 text: contentFormState.text,
@@ -67,9 +63,6 @@ export default class ContentForm extends Component<ContentFormProps> {
     render() {
         const { contentFormState } = this.props;
 
-        console.log('render');
-        console.log(contentFormState?.title);
-        console.log(contentFormState?.text);
         if (contentFormState) {
             return <div>
                 <form onSubmit={(e) => this.onSubmit(e)}>
